@@ -3,44 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moshiurs Code</title>
-    <link rel="icon" type="image/x-icon" href="/assets/black.png">
-
-    <!-- tailwind and daisy -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <title>Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
 
-    <!-- font roboto -->
+    <!-- font opensans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <style>
-    .roboto-font{
-        font-family: "Roboto Slab", serif;
+        .opensans-font{
+            font-family: "Open Sans", sans-serif;
       }
     </style>
 </head>
+<body class=" text-lg  text-black">
 
-<body class="bg-gray-100 text-black">
-
-    <!-- Header Section -->
-    <header class="p-8 text-lg roboto-font">
-        <!-- Navigation Section -->
-        <nav class="mt-8 rounded-lg p-4">
-            <div class="flex flex-row justify-between">
-                <h1 class=""><span class=" text-red-600">M</span>oshiur</h1>
-                <h2>CV</h2>
-                <div class="space-x-4" >
-                    <a href="#" class="hover:underline">Works</a>
-                    <a href="#" class="hover:underline">Blogs</a>
-                </div>
+    <header class=" pt-6 bg-gray-100 rounded-b-2xl p-7 opensans-font">
+       <div class="flex flex-row justify-between">
+            <div class="flex  items-center  space-x-6 mb-4">
+                <a href="index.html" class="hover:underline"><h1 class="font-semibold"><span class=" text-red-600">M</span>oshiur</h1></a>
+                <h1 class="hover:underline">mashiurm2@gmail.com</h1>
+                <a href="google.com"><button class="bg-white border border-gray-300 px-6 py-2 rounded">CV</button></a>
             </div>
-            
-        </nav>
+            <nav class="flex justify-center space-x-6 mt-4">
+            <a href="https://www.linkedin.com/in/mashiur-rahman-ruet/" class="hover:underline">LinkedIn</a>
+            <a href="#" class="hover:underline">Work</a>
+            </nav>
+        </div>
 
+        <!-- Profile Section -->
+        <div class="flex flex-col items-center">
+            <img src="assets/logo.png" alt="Moshiur Rahman" class="w-32 h-32">
+            <p class="text-gray-800  font-semibold -rotate-[10deg] shadow-xl rounded-lg px-5 mt-5">Moshiur Rahman</p>   
+        </div>
     </header>
 
+    <main>
 
+    </main>
+
+
+    <section class="flex justify-center space-x-8 my-12">
+        <img src="brand1.png" alt="Brand 1" class="w-24 h-24">
+        <img src="brand2.png" alt="Brand 2" class="w-24 h-24">
+        <img src="brand3.png" alt="Brand 3" class="w-24 h-24">
+    </section>
+
+    <section class="text-center py-12 bg-white">
+        <h2 class="text-2xl font-semibold mb-8">Collaborate with brands and agencies to create impactful results.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 max-w-4xl mx-auto">
+            <div class="bg-gray-100 p-6 rounded-lg shadow">
+                <h3 class="text-xl font-bold mb-2">UX & UI</h3>
+                <p class="text-gray-600">Designing interfaces that are intuitive, efficient, and enjoyable to use.</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow">
+                <h3 class="text-xl font-bold mb-2">Web & Mobile App</h3>
+                <p class="text-gray-600">Transforming ideas into exceptional web and mobile app experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- <footer class="text-center py-8">
+        <h3 class="text-xl font-bold mb-4">Tell me about your next project</h3>
+        <div class="space-x-4">
+            <button class="bg-black text-white px-6 py-2 rounded-full">Email Me</button>
+            <button class="bg-black text-white px-6 py-2 rounded-full">WhatsApp</button>
+        </div>
+    </footer> -->
 
 </body>
 </html>
