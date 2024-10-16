@@ -20,9 +20,116 @@
 <body class=" text-lg  text-black">
 
     <header class=" pt-6 bg-gray-100 rounded-3xl p-7 opensans-font">
-            <div class="flex flex-col md:flex-row gap-4  justify-around items-center ">
+            <div class="flex flex-row gap-4  justify-around items-center ">
                 <a href="index.html" class="hover:border-b-4 hover:border-red-600"><h1 class="font-semibold hover:font-bold">Home</h1></a>
                 <a href="index.html" class="hover:border-b-4 hover:border-red-600"><h1 class="font-semibold hover:font-bold"><span class=" text-red-600">M</span>oshiur</h1></a> 
             </div>
 
     </header>
+
+    <main class="flex-grow flex flex-col  items-center justify-center">
+        <!-- career -->
+        <div class="w-full max-w-4xl bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-2xl font-bold mb-4 text-center">Career</h2>
+
+            <!-- Table for checkboxes, estimated date, actual date, and dreams -->
+            <div id="dreams-container" class="grid grid-cols-4 gap-4">
+                <div class="font-bold">Status</div>
+                <div class="font-bold">Est. Date of Finish</div>
+                <div class="font-bold">Act. Date of Finish</div>
+                <div class="font-bold">Dreams</div>
+
+                <!-- Rows of data -->
+                <div class="dream-item flex items-center">
+                    <input type="checkbox" class="checkbox" data-id="1" disabled>
+                </div>
+                <div>October 27, 2027</div>
+                <div>---</div>
+                <div>Google Job</div>
+
+                <div class="dream-item flex items-center">
+                    <input type="checkbox" class="checkbox" data-id="2" disabled>
+                </div>
+                <div>October 20, 2024</div>
+                <div>---</div>
+                <div>ML internship</div>
+
+                <div class="dream-item flex items-center">
+                    <!-- checked disabled -->
+                    <input type="checkbox" class="checkbox" data-id="3" disabled>   
+                </div>
+                <div>December 27, 2026</div>
+                <div>---</div>
+                <div>My Own home on my earned money</div>
+            </div>
+        </div>
+
+        <!-- 2025 -->
+        <div class="w-full max-w-4xl bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-2xl font-bold mb-4 text-center">2025</h2>
+
+            <!-- Table for checkboxes, estimated date, actual date, and dreams -->
+            <div id="dreams-container" class="grid grid-cols-4 gap-4">
+                <div class="font-bold">Status</div>
+                <div class="font-bold">Est. Date of Finish</div>
+                <div class="font-bold">Act. Date of Finish</div>
+                <div class="font-bold">Dreams</div>
+
+                <!-- Rows of data -->
+                <div class="dream-item flex items-center">
+                    <input type="checkbox" class="checkbox" data-id="1" disabled>
+                </div>
+                <div>October 27, 2027</div>
+                <div>---</div>
+                <div>Google Job</div>
+
+                <div class="dream-item flex items-center">
+                    <input type="checkbox" class="checkbox" data-id="2" disabled>
+                </div>
+                <div>October 20, 2024</div>
+                <div>---</div>
+                <div>ML internship</div>
+
+                <div class="dream-item flex items-center">
+                    <!-- checked disabled -->
+                    <input type="checkbox" class="checkbox" data-id="3" disabled>   
+                </div>
+                <div>December 27, 2026</div>
+                <div>---</div>
+                <div>My Own home on my earned money</div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <script>
+        // JavaScript to handle sorting based on checkbox status
+        const dreamsContainer = document.getElementById('dreams-container');
+
+        function sortDreams() {
+            const items = Array.from(dreamsContainer.querySelectorAll('.dream-item'));
+
+            // Sort based on checkbox status (checked ones at the bottom)
+            items.sort((a, b) => {
+                const aChecked = a.querySelector('input[type="checkbox"]').checked;
+                const bChecked = b.querySelector('input[type="checkbox"]').checked;
+                return aChecked - bChecked;
+            });
+
+            // Rearrange the DOM elements based on the new order
+            items.forEach((item) => {
+                const estimatedDate = item.nextElementSibling;
+                const actualDate = estimatedDate.nextElementSibling;
+                const dream = actualDate.nextElementSibling;
+                dreamsContainer.appendChild(item);
+                dreamsContainer.appendChild(estimatedDate);
+                dreamsContainer.appendChild(actualDate);
+                dreamsContainer.appendChild(dream);
+            });
+        }
+
+        // Initial sort when the page loads
+        window.onload = sortDreams;
+    </script>
+</body>
